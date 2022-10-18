@@ -151,9 +151,12 @@ class MB_DriverLogin():
         #wait for error to load
         if username=="" or password=="":
             time.sleep(1)
-            WebDriverWait(driver, 60).until(EC.text_to_be_present_in_element((MB_Driver_Login_Objects.By_sign_in_error), "Please enter credentials."))
-            reporter.reportStep("Press submit and login","A login error should appear","Login unsuccessful and an error appeared",True,"", driver.find_element(By.TAG_NAME, "body").screenshot, ssPath + ''.join(random.choices(string.ascii_lowercase, k=20)))
-            print("Login error detected - Blank fields")
+            try:  
+                WebDriverWait(driver, 60).until(EC.text_to_be_present_in_element((MB_Driver_Login_Objects.By_sign_in_error), "Please enter credentials."))
+                reporter.reportStep("Press submit and login","A login error should appear","Login unsuccessful and an error appeared",True,"", driver.find_element(By.TAG_NAME, "body").screenshot, ssPath + ''.join(random.choices(string.ascii_lowercase, k=20)))
+            except:
+                reporter.reportStep("Press submit and login","A login error should appear","Login error did not appear",False,"", driver.find_element(By.TAG_NAME, "body").screenshot, ssPath + ''.join(random.choices(string.ascii_lowercase, k=20)))
+                print("No error message appeared")
         else:
             try:
                 WebDriverWait(driver, 60).until(EC.text_to_be_present_in_element((MB_Driver_Login_Objects.By_sign_in_error), "Invalid Credentials"))
