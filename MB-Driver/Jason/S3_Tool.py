@@ -25,10 +25,3 @@ def upload_file(file_name, bucket, object_name=None):
         return False
     return True
 
-##if __name__ == '__main__':
-##    #usage_demo()
-##    #main()
-##    #hello_s3()
-##    #print(upload_file(".screenshots", "scrumbags-reports"))
-##    print(upload_file("testZip.zip", "scrumbags-reports"))
-##    pass

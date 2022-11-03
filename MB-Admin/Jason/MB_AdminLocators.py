@@ -9,8 +9,6 @@ class MB_Admin_Login_Objects(object):
     By_password_field = (By.NAME, "password")
     By_sign_in = (By.XPATH, "//*[@id='root']/div/div/div/form/button")
     By_forgot_password_link = (By.LINK_TEXT, "/forgotPassword")
-    #By_sign_up_link = (By.LINK_TEXT, "/signUp")
-    #By_sign_in_error = (By.ID, "LoginError")
 
 
 class MB_Admin_Home_Objects(object):

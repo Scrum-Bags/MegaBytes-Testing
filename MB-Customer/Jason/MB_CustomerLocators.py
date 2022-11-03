@@ -8,9 +8,7 @@ class MB_Customer_Login_Objects(object):
     By_username_field = (By.XPATH, "//*[@id='mat-input-0']")
     By_password_field = (By.XPATH, "//*[@id='mat-input-1']")
     By_sign_in = (By.XPATH, "/html/body/app-root/app-login/div/div/mat-card/mat-card-content/div/button")
-    #By_forgot_password_link = (By.LINK_TEXT, "/forgotPassword")
     By_register_link = (By.XPATH, "/html/body/app-root/app-header/nav/ul/li[1]/button")
-    #By_sign_in_error = (By.ID, "LoginError")
 
 
 class MB_Customer_Home_Objects(object):
